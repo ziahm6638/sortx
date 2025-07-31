@@ -4,7 +4,7 @@
     "@react-email/render": "^0.0.10",
     "logs": "workspace:*",
     "node-fetch": "^3.3.2",
-    "nodemailer": "^6.9.15",
+    "nodemailer": "^7.0.5",
     "react": "18.3.1",
     "react-dom": "18.3.1",
     "react-email": "^1.10.0",
