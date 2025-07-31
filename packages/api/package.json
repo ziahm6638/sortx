@@ -1,6 +1,6 @@
 {
   "dependencies": {
-    "@lemonsqueezy/lemonsqueezy.js": "^3.3.1",
+    "@lemonsqueezy/lemonsqueezy.js": "^4.0.0",
     "@sveltejs/kit": "^2.15.2",
     "@trpc/server": "10.45.2",
     "auth": "workspace:*",
