@@ -1,11 +1,11 @@
 <script lang="ts">
+  import { goto } from "$app/navigation";
+  import { page } from "$app/state";
   import StatsTile from "$lib/modules/saas/dashboard/components/StatsTile.svelte";
   import PageHeader from "$lib/modules/saas/shared/components/PageHeader.svelte";
   import { apiClient } from "@shared/lib/ApiClient";
+  import { Card } from "@ui/components";
   import type { PageData } from "./$types";
-  import { Button, Card } from "@ui/components";
-  import { goto } from "$app/navigation";
-  import { page } from "$app/state";
 
   interface Props {
     data: PageData;
@@ -20,7 +20,7 @@
   }
 </script>
 
-<div class="container max-w-6xl py-8">
+<div class="">
   <PageHeader
     title={`Welcome ${user?.name}!`}
     subtitle={"See the latest stats of your awesome business."}

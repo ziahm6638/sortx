@@ -107,13 +107,7 @@
     <!-- Logo Section -->
     <div class="flex h-16 items-center justify-between border-b px-6">
       <a href="/app/dashboard" class="flex items-center gap-3">
-        <div class="[&_svg]:h-8 [&_svg]:w-8">
-          <Logo withLabel={false} />
-        </div>
-        <span
-          class="text-xl font-bold bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent"
-          >SortX</span
-        >
+        <Logo />
       </a>
     </div>
 

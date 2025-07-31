@@ -18,6 +18,7 @@ generator zod {
 enum UserRole {
   USER
   ADMIN
+  SUPERADMIN
 }
 
 model User {
@@ -89,6 +90,8 @@ model Team {
   memberships  TeamMembership[]
   subscription Subscription?
   invitations  TeamInvitation[]
+  Properties   Properties?
+  Tickets      Tickets[]
 }
 
 enum TeamMemberRole {
@@ -140,4 +143,155 @@ model Subscription {
   planId          String
   variantId       String
   nextPaymentDate DateTime?
+}
+
+model Address {
+  id                String       @id @default(cuid())
+  UPRN              String
+  line1             String
+  line2             String
+  line3             String
+  line4             String
+  locality          String
+  townOrCity        String
+  county            String
+  district          String
+  country           String
+  formattedAddress  String[]
+  postcode          String
+  latitude          Float
+  longitude         Float
+  thoroughfare      String
+  buildingName      String
+  subBuildingName   String
+  subBuildingNumber String
+  buildingNumber    String
+  Properties        Properties[]
+  Contacts          Contacts[]
+  Tenants           Tenants[]
+}
+
+model Properties {
+  id        String       @id @default(cuid())
+  team      Team         @relation(fields: [teamId], references: [id], onDelete: Cascade)
+  teamId    String       @unique
+  address   Address      @relation(fields: [addressId], references: [id])
+  addressId String
+  type      PropertyType
+  rooms     Int
+  size      Float
+  Tenancy   Tenancy[]
+  Tickets   Tickets[]
+}
+
+enum PropertyType {
+  HOUSE
+  FLAT
+  APARTMENT
+  BUNGALOW
+  BOAT
+  BASEMENT
+  ROOM
+  MAISONETTE
+}
+
+model Contacts {
+  id                 String   @id @default(cuid())
+  title              Title
+  firstName          String
+  lastName           String
+  middleNames        String
+  dateOfBirth        DateTime
+  email              String
+  primaryContactNo   String
+  secondaryContactNo String
+  address            Address  @relation(fields: [addressId], references: [id])
+  addressId          String
+  status             Status
+}
+
+enum Title {
+  MR
+  MRS
+  MS
+}
+
+enum TenantType {
+  COMPANY
+  INDIVIDUAL
+}
+
+model Tenants {
+  id                 String     @id @default(cuid())
+  type               TenantType
+  companyName        String
+  title              Title
+  firstName          String
+  lastName           String
+  middleNames        String
+  dateOfBirth        DateTime
+  email              String
+  primaryContactNo   String
+  secondaryContactNo String
+  address            Address    @relation(fields: [addressId], references: [id])
+  addressId          String
+  status             Status
+  placeOfBirth       String
+  NINumber           String
+  Tenancy            Tenancy[]
+  Tickets            Tickets[]
+}
+
+enum Status {
+  ACTIVE
+  ARCHIVED
+}
+
+model Tenancy {
+  id         String      @id @default(cuid())
+  property   Properties  @relation(fields: [propertyId], references: [id])
+  propertyId String
+  tenant     Tenants     @relation(fields: [tenantId], references: [id])
+  tenantId   String
+  startDate  DateTime
+  endDate    DateTime
+  type       TenancyType
+  Tickets    Tickets[]
+}
+
+enum TenancyType {
+  ASSURED
+  ASSURED_SHORTHOLD
+  SECURE
+  LICENSE_TO_OCCUPY
+  DEMOTED
+  INTRODUCTORY
+  COMPANY_LET
+  NON_ASSURED
+  EXCLUDED_TENANCY
+  REGULATED_TENANCY
+}
+
+model Tickets {
+  id                String     @id @default(cuid())
+  referenceNo       String
+  property          Properties @relation(fields: [propertyId], references: [id])
+  propertyId        String
+  team              Team       @relation(fields: [teamId], references: [id])
+  teamId            String
+  reporterName      String
+  reporterEmail     String
+  reporterContactNo String
+  matchedTenant     Tenants    @relation(fields: [tenantId], references: [id])
+  tenantId          String
+  matchedTenancy    Tenancy    @relation(fields: [tenancyId], references: [id])
+  tenancyId         String
+  Issues            Issues[]
+}
+
+model Issues {
+  id          String  @id @default(cuid())
+  referenceNo String
+  ticket      Tickets @relation(fields: [ticketId], references: [id])
+  ticketId    String
 }
