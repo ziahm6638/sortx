@@ -1,0 +1,25 @@
+{
+  "dependencies": {
+    "consola": "^3.2.3"
+  },
+  "devDependencies": {
+    "@types/node": "^22.9.0",
+    "eslint": "^8.56.0",
+    "eslint-config-custom": "workspace:*",
+    "tsconfig": "workspace:*"
+  },
+  "eslintConfig": {
+    "extends": [
+      "eslint-config-custom/base"
+    ],
+    "root": true
+  },
+  "main": "./index.ts",
+  "name": "logs",
+  "scripts": {
+    "lint": "eslint \"**/*.ts*\"",
+    "type-check": "tsc --noEmit"
+  },
+  "types": "./**/.ts",
+  "version": "0.0.0"
+}

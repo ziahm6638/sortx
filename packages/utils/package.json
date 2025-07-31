@@ -1,0 +1,16 @@
+{
+  "devDependencies": {
+    "@types/node": "^22.9.0",
+    "eslint-config-custom": "workspace:*",
+    "tsconfig": "workspace:*"
+  },
+  "license": "MIT",
+  "main": "./index.ts",
+  "name": "utils",
+  "scripts": {
+    "lint": "eslint \"**/*.ts*\"",
+    "type-check": "tsc --noEmit"
+  },
+  "types": "./**/.ts",
+  "version": "0.0.0"
+}

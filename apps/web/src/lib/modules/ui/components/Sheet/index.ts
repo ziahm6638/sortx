@@ -1,0 +1,11 @@
+import { Dialog } from "bits-ui";
+export const SheetClose = Dialog.Close;
+export const SheetTrigger = Dialog.Trigger;
+export const SheetPortal = Dialog.Portal;
+export { default as Sheet } from "./Sheet.svelte";
+export { default as SheetContent } from "./SheetContent.svelte";
+export { default as SheetDescription } from "./SheetDescription.svelte";
+export { default as SheetFooter } from "./SheetFooter.svelte";
+export { default as SheetHeader } from "./SheetHeader.svelte";
+export { default as SheetOVerlay } from "./SheetOverlay.svelte";
+export { default as SheetTitle } from "./SheetTitle.svelte";

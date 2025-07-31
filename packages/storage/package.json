@@ -1,0 +1,27 @@
+{
+  "dependencies": {
+    "@aws-sdk/client-s3": "3.654.0",
+    "@aws-sdk/s3-request-presigner": "3.437.0",
+    "logs": "workspace:*"
+  },
+  "devDependencies": {
+    "@types/node": "^22.9.0",
+    "eslint": "^8.57.0",
+    "eslint-config-custom": "workspace:*",
+    "tsconfig": "workspace:*"
+  },
+  "eslintConfig": {
+    "extends": [
+      "eslint-config-custom/base"
+    ],
+    "root": true
+  },
+  "main": "./index.ts",
+  "name": "storage",
+  "scripts": {
+    "lint": "eslint \"**/*.ts*\"",
+    "type-check": "tsc --noEmit"
+  },
+  "types": "./**/.ts",
+  "version": "0.0.0"
+}
