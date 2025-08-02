@@ -1,6 +1,6 @@
 {
   "dependencies": {
-    "@fontsource/poppins": "^5.1.0",
+    "@fontsource/poppins": "^5.2.6",
     "@tanstack/svelte-table": "npm:tanstack-table-8-svelte-5@^0.1",
     "@trpc/client": "10.45.2",
     "api": "workspace:*",
