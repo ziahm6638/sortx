@@ -6,7 +6,7 @@
     "api": "workspace:*",
     "auth": "workspace:*",
     "bits-ui": "0.22.0",
-    "class-variance-authority": "^0.7.0",
+    "class-variance-authority": "^0.7.1",
     "cropperjs": "^1.6.2",
     "database": "workspace:*",
     "date-fns": "^4.1.0",
