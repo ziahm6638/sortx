@@ -46,7 +46,7 @@
     "mdsvex": "^0.12.3",
     "postcss": "^8.4.47",
     "svelte": "^5.36.0",
-    "svelte-check": "^4.0.5",
+    "svelte-check": "^4.3.0",
     "svelte-meta-tags": "^4.1.0",
     "tailwind-config": "workspace:*",
     "tailwindcss": "^3.4.14",
