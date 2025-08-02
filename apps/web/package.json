@@ -21,7 +21,7 @@
     "sveltekit-top-loader": "^0.1.0",
     "tailwind-merge": "^2.5.4",
     "trpc-sveltekit": "3.6.2",
-    "uuid": "^10.0.0",
+    "uuid": "^11.1.0",
     "vite-plugin-devtools-json": "^0.4.1"
   },
   "devDependencies": {
