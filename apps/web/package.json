@@ -12,7 +12,7 @@
     "date-fns": "^4.1.0",
     "js-cookie": "^3.0.5",
     "logs": "workspace:*",
-    "lucide-svelte": "^0.454.0",
+    "lucide-svelte": "^0.536.0",
     "superjson": "^2.2.1",
     "svelte-boring-avatars": "^1.2.6",
     "svelte-file-dropzone": "^2.0.9",
